@@ -125,7 +125,7 @@ function displayResult()  {      // displays result if values are present when p
 }
 
 function backspace() {  // it deletes one char at a time from the main display
-    if (memory[0] && displayErasable) {return}
+    if ((memory[0] && displayErasable) || mainDisplay.innerText.endsWith(".")) {return}
     if (mainDisplay.innerText.length > 1) {     //  until only a 0 is displayed
         mainDisplay.innerText = mainDisplay.innerText.slice(0, mainDisplay.innerText.length-1)
     } else if (mainDisplay.innerText.length == 1) {
@@ -135,13 +135,8 @@ function backspace() {  // it deletes one char at a time from the main display
 }
 
 function toggleFloat() {   // puts or removes float point from main display
-    displayErasable = false;
-    if (!float) {
+    if (!/[.]/.test(mainDisplay.innerText) && mainDisplay.innerText != "" && !displayErasable) {
         mainDisplay.innerText += ".";
-        float = true;
-    } else {
-        mainDisplay.innerText = mainDisplay.innerText.slice(0, mainDisplay.innerText.length-1)
-        float = false;
     }
 }
 
