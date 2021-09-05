@@ -60,22 +60,17 @@ allButtons.forEach(button => button.addEventListener("transitionend", () => {  /
     button.classList.remove("buttonClicked")
 }))
 
-clearButton.addEventListener("click", clear)
-
-deleteButton.addEventListener("click", backspace)
-
-
 let displayErasable;  // main display overwritability
 let memory = [];  // calculator buffer for operating in the right moment
 let float;        // main display with decimals or not
-
-floatButton.addEventListener("click", toggleFloat)
-
-resultButton.addEventListener("click", () => displayResult)
-
-
 let regExpNum = /[0-9]/
 let regExpOp = /[*+\-/]/
+
+floatButton.addEventListener("click", toggleFloat)
+clearButton.addEventListener("click", clear)
+deleteButton.addEventListener("click", backspace)
+resultButton.addEventListener("click", displayResult)
+
 digitButtons.forEach(button => button.addEventListener("click", () => numberDisplaying(button.value)))
 operatorButtons.forEach(button => button.addEventListener("click", () => operationalLogic(button.value)))
 window.addEventListener("keydown", (e) => {  // adds support for keyboard
