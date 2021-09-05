@@ -4,7 +4,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(252, 248, 196);
     font-family: monospace;
     background-image: url("blackboard1.jpg");
 }
@@ -15,14 +14,17 @@ body {
     align-items: center;
     width: 350px;
     height: 500px;
-    background-color: rgb(122, 40, 40);
+    background-image: url("texture.png");
+    background-size: contain;
+    background-color: rgb(151, 98, 98);
     border-radius: 10px;
     justify-content: space-around;
-    box-shadow: 13px 1px 20px 15px black, -5px 1px 25px 15px black;
+    box-shadow: 13px 1px 30px 10px black, -5px 1px 30px 10px black;
 }
 
 #display {
     background-color: rgb(212, 212, 212);
+    box-shadow: 0.5px 0.5px 10px 0.5px black;
     width: 85%;
     height: 15%;
     margin-top: 5%;
@@ -36,36 +38,52 @@ body {
     overflow: hidden;
 }
 
-#inputText {
+#secondDisplay {
     padding-right: 3%;
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: grey;
 }
 
-#resultText {
-    font-size: 2.2em;
+#mainDisplay {
+    font-size: 3em;
     padding-right: 3%;
+    color: hsl(0, 0%, 0%);
 }
 
 #buttons {
     display: grid;
-    font-size: 1.5em;
     gap: 1em;
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: repeat(5, 1fr);
 }
 
 #buttons input {
-    width: 50px;
-    height: 50px;
-    background-color: rgb(175, 146, 72);
-    border: solid 1px black;
-    border-radius: 5px;
+    cursor: pointer;
     transition: all 0.05s;
+    box-shadow: 1.5px 1px 6px 0.5px black;
 }
 
+#buttons .digit, #resultBtn, #floatBtn {
+    width: 50px;
+    height: 50px;
+    background-color: hsl(0, 7%, 38%);
+    border: solid 2px grey;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+}
+
+#buttons .operator {
+    width: 50px;
+    height: 50px;
+    background-color: hsl(0, 5%, 12%);
+    border: solid 2px grey;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+}
 .buttonClicked {
-    background-color: rgb(204, 175, 103);
+    scale: 0.9;
 }
 
 #zero {grid-area: 4 / 2;}
@@ -88,5 +106,25 @@ body {
 #multiply {grid-area: 2 / 5;}
 #divide {grid-area: 1 / 5;}
 
-#clearBtn {grid-area: 4;}
+#clearBtn {
+    width: 50px;
+    height: 50px;
+    background-color: hsl(0, 65%, 40%);
+    border: solid 2px grey;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    grid-area: 4;
+}
+
+#delBtn {
+    width: 50px;
+    height: 50px;
+    background-color: hsl(0, 65%, 40%);
+    border: solid 2px grey;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    grid-area: 3;
+}
 
